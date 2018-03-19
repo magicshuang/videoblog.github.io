@@ -5,9 +5,10 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="prettify.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
-	<body class="is-loading">
+	<body class="is-loading" onload="prettyPrint()">
 
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -15,6 +16,7 @@
 				<!-- Header -->
 					<header id="header">
 						<a href="http://www.magicss.work/ques.html" class="logo">问题-解决</a>
+						<p>安装scrupy</p>
 					</header>
 
 				<!-- Nav -->
@@ -29,13 +31,91 @@
 						<!-- Post -->
 							<section class="post">
 								<header class="major">
-									<span class="date">time</span>
-									<h1><a href="" >XX</a><br/>
-									</h1>
+									<span class="date"></span>
+									<h1><a href="" >安装scrupy</a><br/></h1>
 									<p></p>
 								</header>
-								<div class="image main"><img src="" alt="" /></div>
-								<p></p>
+								<p style="font-family: Georgia" >
+								    安装依赖包:<br/>
+								    lxml<br/>
+									setuptools<br/>
+									zope.interface<br/>
+									Twisted（python3的注意，pip install 直接安装可能不好使。提示错误：要求安装microsoft visual c++。所以，采用weel的.wel文件安装  下载：https://www.lfd.uci.edu/~gohlke/pythonlibs/#twisted）<br/>
+									pywin32<br/>
+									pyOpenSSL<br/>
+							        <br/>
+							        以及主角<br/>
+                                    scrapy<br/></p>
+								     <hr style="height:1px;border:none;border-top:1px solid #555555;" />
+									<p>
+									首先pip install list 查看一下你安装的包包里有没有上面那帮，有就不用安了。<br/>
+                                    没有哪个python -m pip install xxx 安装哪个<br/></p>
+									
+									<hr style="height:1px;border:none;border-top:1px solid #555555;" />
+									<p>
+									安装pywin32<br/>
+                                    如果遇到找不到python的情况，添加脚本如下：（新建文件register.py）<br/>
+									python 里运行 register.py<br/>
+                                    然后点开pywinXXXXX.exe 运行即可</p>
+									<hr style="height:1px;border:none;border-top:1px solid #555555;" />
+									
+
+ 
+									<pre class="prettyprint" style="background:#575757">
+#
+# script to register Python 2.0 or later for use with win32all
+# and other extensions that require Python registry settings
+#
+# written by Joakim Loew for Secret Labs AB / PythonWare
+#
+# source:
+# http://www.pythonware.com/products/works/articles/regpy20.htm
+#
+# modified by Valentine Gogichashvili as described in http://www.mail-archive.com/distutils-sig@python.org/msg10512.html
+
+import sys
+  
+from winreg import *
+
+# tweak as necessary
+version = sys.version[:3]
+installpath = sys.prefix
+
+regpath = "SOFTWARE\\Python\\Pythoncore\\%s\\" % (version)
+installkey = "InstallPath"
+pythonkey = "PythonPath"
+pythonpath = "%s;%s\\Lib\\;%s\\DLLs\\" % (
+    installpath, installpath, installpath
+)
+  
+def RegisterPy():
+    try:
+        reg = OpenKey(HKEY_CURRENT_USER, regpath)
+    except EnvironmentError as e:
+        try:
+            reg = CreateKey(HKEY_CURRENT_USER, regpath)
+            SetValue(reg, installkey, REG_SZ, installpath)
+            SetValue(reg, pythonkey, REG_SZ, pythonpath)
+            CloseKey(reg)
+        except:
+            print("*** Unable to register!")
+            return
+        print("--- Python", version, "is now registered!")
+        return
+    if (QueryValue(reg, installkey) == installpath and
+        QueryValue(reg, pythonkey) == pythonpath):
+        CloseKey(reg)
+        print("=== Python", version, "is already registered!")
+        return
+    CloseKey(reg)
+    print("*** Unable to register!")
+    print("*** You probably have another Python installation!")
+  
+if __name__ == "__main__":
+    RegisterPy()
+
+									</pre>
+
 							</section>
 
 					</div>
@@ -53,6 +133,8 @@
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="prettify.js"></script>
 
 	</body>
+	
 </html>

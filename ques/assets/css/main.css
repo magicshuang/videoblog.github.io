@@ -1777,16 +1777,18 @@
 
 	pre {
 		-webkit-overflow-scrolling: touch;
-		font-family: "Courier New", monospace;
+		font-family: "Courier", monospace;
 		font-size: 0.9rem;
 		margin: 0 0 2rem 0;
+		text-align:left;
 	}
 
 		pre code {
 			display: block;
 			line-height: 1.75;
-			padding: 1rem 1.5rem;
+			padding: 0rem 1.5rem;
 			overflow-x: auto;
+			text-align:left;
 		}
 
 	hr {
@@ -2963,7 +2965,7 @@
 
 		.pagination .next:before {
 			content: '\f105';
-			float: right;
+			float: left;
 			margin-left: 0.9375em;
 		}
 
@@ -3581,7 +3583,7 @@
 			}
 
 		#main > footer {
-			text-align: center;
+			text-align: left;
 		}
 
 		#main > .post {
@@ -3599,7 +3601,7 @@
 			}
 
 			#main > .post.featured {
-				text-align: center;
+				text-align: left;
 			}
 
 			@media screen and (max-width: 1280px) {
@@ -3625,6 +3627,7 @@
 						font-size: 2.5rem;
 						line-height: 1.2;
 						margin: 0 0 1.5rem 0;
+						text-align: left;
 					}
 
 			}
@@ -3642,7 +3645,7 @@
 			-webkit-align-items: stretch;
 			-ms-align-items: stretch;
 			align-items: stretch;
-			text-align: center;
+			text-align: left;
 			width: 100%;
 			padding: 0;
 		}
@@ -3664,7 +3667,7 @@
 
 			#main > .posts > * {
 				padding: 4rem;
-				width: 50%;
+				width: 100%;
 			}
 
 			#main > .posts > article {
@@ -3672,7 +3675,7 @@
 				border-left-width: 2px;
 				border-style: solid;
 				border-top-width: 2px;
-				text-align: center;
+				text-align: left;
 			}
 
 				#main > .posts > article > :last-child {
@@ -4038,15 +4041,16 @@
 					display: -webkit-flex;
 					display: -ms-flex;
 					display: flex;
-					-moz-align-items: center;
-					-webkit-align-items: center;
-					-ms-align-items: center;
-					align-items: center;
+					-moz-align-items: left;
+					-webkit-align-items: left;
+					-ms-align-items: left;
+					align-items: left;
 					padding: 3.15rem 4rem;
 				}
 
 					#footer > section.split.contact > section > * {
 						margin-bottom: 0;
+						align-items: left;
 					}
 
 					#footer > section.split.contact > section > :first-child {
@@ -4415,7 +4419,7 @@
 			padding-right: 1.25rem;
 			position: absolute;
 			right: 0;
-			text-align: right;
+			text-align: left;
 			top: 0;
 			vertical-align: middle;
 			width: 7rem;
