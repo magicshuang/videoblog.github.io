@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-
+<script src="https://cdn.jsdelivr.net/npm/hls.js"></script>
 <html>
 	<head>
 		<title>又又个人博客</title>
@@ -49,7 +49,8 @@
 
 				<!-- Main -->
 					<div id="main">
-						
+						<video id="video" preload muted loop autoplay style="height: 100%;width: 100%;object-fit: cover;">
+						</video>
 						<!-- Featured Post -->
 							<article class="post featured">
 								<header class="major">
@@ -73,9 +74,8 @@
 			</div>
 
 		<!-- Scripts -->
-		<script src="https://cdn.jsdelivr.net/npm/hls.js"></script>
-		<video id="video" preload muted loop autoplay style="height: 100%;width: 100%;object-fit: cover;">
-		</video>
+		
+		
 		<script>
 		  var video = document.getElementById('video');
 		  var videoSrc = 'images/playlist.m3u8';
