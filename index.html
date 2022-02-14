@@ -54,6 +54,7 @@
 							<article class="post featured">
 								<header class="major">
 									<span class="date">首页</span>
+									<button onclick="playPause()">播放/暂停</button> 
 									<video id="video" preload muted loop autoplay style="height: 100%;width: 100%;object-fit: cover;">
 									</video>
 									
@@ -78,12 +79,21 @@
 		<script>
 		  var video = document.getElementById('video');
 		  var videoSrc = 'images/playlist.m3u8';
+		  function playPause()
+			{ 
+				if (video.paused) 
+				  hls.on(Hls.Events.MANIFEST_PARSED, function() {
+		      			video.play();});
+				else 
+				  hls.on(Hls.Events.MANIFEST_PARSED, function() {
+		      			video.pause();});
+			} 
+
 		  if (Hls.isSupported()) {
 		    var hls = new Hls();
 		    hls.loadSource(videoSrc);
 		    hls.attachMedia(video);
-		    hls.on(Hls.Events.MANIFEST_PARSED, function() {
-		      video.play();
+		    
 		    });
 		  }
 		</script>
