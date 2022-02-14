@@ -81,14 +81,14 @@
 		<script>
 		  var video = document.getElementById('video');
 		  var videoSrc = 'images/playlist.m3u8';
+			
 		  function playPause()
 			{ 
-				if (video.paused) 
-				  hls.on(Hls.Events.MANIFEST_PARSED, function() {
-		      			video.play();});
-				else 
-				  hls.on(Hls.Events.MANIFEST_PARSED, function() {
-		      			video.pause();});
+
+			  hls.on(Hls.Events.MANIFEST_PARSED, function() {
+				video.play();
+			  	});
+
 			} 
 
 		  if (Hls.isSupported()) {
