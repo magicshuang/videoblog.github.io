@@ -69,6 +69,64 @@
 								<div><video id="video02" preload muted loop autoplay style="background-image: url('images/11.jpg');height: 70%;width: 70%;object-fit: cover;">
 								</video></div></div>
 								
+								<h4>跌倒检测-1</h4>
+								<div>
+								<div><button onclick="playPause03()"> 播放 </button></div>
+								<div style="height: 10px;"></div>
+								<div><video id="video03" preload muted loop autoplay style="background-image: url('images/11.jpg');height: 70%;width: 70%;object-fit: cover;">
+								</video></div></div>
+								
+								<h4>跌倒检测-2</h4>
+								<div>
+								<div><button onclick="playPause03()"> 播放 </button></div>
+								<div style="height: 10px;"></div>
+								<div><video id="video03" preload muted loop autoplay style="background-image: url('images/11.jpg');height: 70%;width: 70%;object-fit: cover;">
+								</video></div></div>
+								
+								<h4>火焰-1</h4>
+								<div>
+								<div><button onclick="playPause05()"> 播放 </button></div>
+								<div style="height: 10px;"></div>
+								<div><video id="video05" preload muted loop autoplay style="background-image: url('images/11.jpg');height: 70%;width: 70%;object-fit: cover;">
+								</video></div></div>
+								
+								<h4>火焰-2</h4>
+								<div>
+								<div><button onclick="playPause06()"> 播放 </button></div>
+								<div style="height: 10px;"></div>
+								<div><video id="video06" preload muted loop autoplay style="background-image: url('images/11.jpg');height: 70%;width: 70%;object-fit: cover;">
+								</video></div></div>
+								
+								<h4>口罩-1</h4>
+								<div>
+								<div><button onclick="playPause07()"> 播放 </button></div>
+								<div style="height: 10px;"></div>
+								<div><video id="video07" preload muted loop autoplay style="background-image: url('images/11.jpg');height: 70%;width: 70%;object-fit: cover;">
+								</video></div></div>
+								
+								<h4>人体检测-1</h4>
+								<div>
+								<div><button onclick="playPause08()"> 播放 </button></div>
+								<div style="height: 10px;"></div>
+								<div><video id="video08" preload muted loop autoplay style="background-image: url('images/11.jpg');height: 70%;width: 70%;object-fit: cover;">
+								</video></div></div>
+								
+								<h4>吸烟检测-1</h4>
+								<div>
+								<div><button onclick="playPause09()"> 播放 </button></div>
+								<div style="height: 10px;"></div>
+								<div><video id="video09" preload muted loop autoplay style="background-image: url('images/11.jpg');height: 70%;width: 70%;object-fit: cover;">
+								</video></div></div>
+								
+								<h4>吸烟检测-2</h4>
+								<div>
+								<div><button onclick="playPause10()"> 播放 </button></div>
+								<div style="height: 10px;"></div>
+								<div><video id="video10" preload muted loop autoplay style="background-image: url('images/11.jpg');height: 70%;width: 70%;object-fit: cover;">
+								</video></div></div>
+								
+								
+								
 								<a href="#" class="image main"><img src="" alt="" /></a>
 								<ul class="actions">
 									<li><a href="#" class="button big">回顶部</a></li>
@@ -179,9 +237,20 @@
 					video.play();
 					});
 			 }} ;
-		function playPause08(){ 
-			var video = document.getElementById('person08');
-		  	var videoSrc = 'images/videos/person08.m3u8';
+		function playPause09(){ 
+			var video = document.getElementById('smoke09');
+		  	var videoSrc = 'images/videos/smoke09.m3u8';
+			if (Hls.isSupported()) {
+			    var hls = new Hls();
+			    hls.loadSource(videoSrc);
+			    hls.attachMedia(video);
+			    hls.on(Hls.Events.MANIFEST_PARSED, function() {
+					video.play();
+					});
+			 }} ;
+		  function playPause10(){ 
+			var video = document.getElementById('smoke10');
+		  	var videoSrc = 'images/videos/smoke10.m3u8';
 			if (Hls.isSupported()) {
 			    var hls = new Hls();
 			    hls.loadSource(videoSrc);
