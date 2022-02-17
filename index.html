@@ -87,10 +87,11 @@
 		
 		
 		<script>
-		  var video = document.getElementById('video');
-		  var videoSrc = 'images/videos/safe01.m3u8';
+		  
 			
 		  function playPause(){ 
+			var video = document.getElementById('video');
+		  	var videoSrc = 'images/videos/safe01.m3u8';
 			if (Hls.isSupported()) {
 			    var hls = new Hls();
 			    hls.loadSource(videoSrc);
@@ -100,18 +101,21 @@
 					});
 			 }} ;
 
-		  var video02 = document.getElementById('video02');
-		  var videoSrc02 = 'images/videos/safe02.m3u8';
 			
 		  function playPause02(){ 
+			var video = document.getElementById('video02');
+		  	var videoSrc = 'images/videos/safe02.m3u8';
 			if (Hls.isSupported()) {
 			    var hls = new Hls();
-			    hls.loadSource(videoSrc02);
-			    hls.attachMedia(video02);
+			    hls.loadSource(videoSrc);
+			    hls.attachMedia(video);
 			    hls.on(Hls.Events.MANIFEST_PARSED, function() {
-					video02.play();
+					video.play();
 					});
 			 }} ;
+		  
+			
+
 		  
 		</script>
 
