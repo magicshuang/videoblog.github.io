@@ -55,13 +55,19 @@
 								<header class="major"></header>
 								
 								
-								<h4>吸烟检测</h4>
+								<h4>头盔和反光衣-1</h4>
 								<div>
 								<div><button onclick="playPause()"> 播放 </button></div>
 								<div style="height: 10px;"></div>
 								<div><video id="video" preload muted loop autoplay style="background-image: url('images/11.jpg');height: 70%;width: 70%;object-fit: cover;">
 								</video></div></div>
-									
+								
+								<h4>头盔和反光衣-2</h4>
+								<div>
+								<div><button onclick="playPause02()"> 播放 </button></div>
+								<div style="height: 10px;"></div>
+								<div><video id="video02" preload muted loop autoplay style="background-image: url('images/11.jpg');height: 70%;width: 70%;object-fit: cover;">
+								</video></div></div>
 								
 								<a href="#" class="image main"><img src="" alt="" /></a>
 								<ul class="actions">
@@ -82,7 +88,7 @@
 		
 		<script>
 		  var video = document.getElementById('video');
-		  var videoSrc = 'images/playlist.m3u8';
+		  var videoSrc = 'images/videos/safe01.m3u8';
 			
 		  function playPause(){ 
 			if (Hls.isSupported()) {
@@ -92,10 +98,20 @@
 			    hls.on(Hls.Events.MANIFEST_PARSED, function() {
 					video.play();
 					});
-			 }
+			 }} ;
 
-		} ;
-
+		  var video02 = document.getElementById('video');
+		  var videoSrc02 = 'images/videos/safe02.m3u8';
+			
+		  function playPause02(){ 
+			if (Hls.isSupported()) {
+			    var hls = new Hls();
+			    hls.loadSource(videoSrc02);
+			    hls.attachMedia(video02);
+			    hls.on(Hls.Events.MANIFEST_PARSED, function() {
+					video02.play();
+					});
+			 }} ;
 		  
 		</script>
 
