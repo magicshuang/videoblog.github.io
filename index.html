@@ -55,16 +55,25 @@
 								<header class="major"></header>
 								
 								
-								<h4>头盔和反光衣-1</h4>
+								<h4>算法视频</h4>
 								<div>
-								<div><button onclick="playPause()"> 播放 </button></div>
+								<div><button onclick="playPause()"> 头盔反光-1 </button> 
+								        <button onclick="playPause02()"> 头盔反光-2 </button>
+									<button onclick="playPause03()"> 跌倒检测-1 </button>
+									<button onclick="playPause03()"> 跌倒检测-2 </button>
+									<button onclick="playPause05()"> 火焰-1 </button>
+									<button onclick="playPause06()"> 火焰-2 </button>
+									<button onclick="playPause07()"> 口罩-1 </button>
+									<button onclick="playPause08()"> 人体检测-1 </button>
+									<button onclick="playPause09()"> 吸烟检测-1 </button>
+									<button onclick="playPause10()"> 吸烟检测-2 </button>
+									</div>
 								<div style="height: 10px;"></div>
 								<div><video id="video" preload muted loop autoplay style="background-image: url('images/11.jpg');height: 70%;width: 70%;object-fit: cover;">
 								</video></div></div>
-								
-								<h4>头盔和反光衣-2</h4>
-								<div>
-								<div><button onclick="playPause02()"> 播放 </button></div>
+							
+								<!-- div>
+								<div><button onclick="playPause02()"> 头盔和反光衣-2 </button></div>
 								<div style="height: 10px;"></div>
 								<div><video id="video02" preload muted loop autoplay style="background-image: url('images/11.jpg');height: 70%;width: 70%;object-fit: cover;">
 								</video></div></div>
@@ -123,7 +132,7 @@
 								<div><button onclick="playPause10()"> 播放 </button></div>
 								<div style="height: 10px;"></div>
 								<div><video id="video10" preload muted loop autoplay style="background-image: url('images/11.jpg');height: 70%;width: 70%;object-fit: cover;">
-								</video></div></div>
+								</video></div></div -->
 								
 								
 								
@@ -145,11 +154,11 @@
 		
 		
 		<script>
-		  
+		  var video = document.getElementById('video');
+		 
+		  function play(videoSrc){ 
 			
-		  function playPause(){ 
-			var video = document.getElementById('video');
-		  	var videoSrc = 'images/videos/safe01.m3u8';
+
 			if (Hls.isSupported()) {
 			    var hls = new Hls();
 			    hls.loadSource(videoSrc);
@@ -157,108 +166,59 @@
 			    hls.on(Hls.Events.MANIFEST_PARSED, function() {
 					video.play();
 					});
-			 }} ;
+			 }} ;	
+		  function playPause(){ 
+			// var video = document.getElementById('video');
+		  	var videoSrc = 'images/videos/safe01.m3u8';
+			play(videoSrc);
+			} ;
 
 			
 		  function playPause02(){ 
-			var video = document.getElementById('video02');
+			// var video = document.getElementById('video02');
 		  	var videoSrc = 'images/videos/safe02.m3u8';
-			if (Hls.isSupported()) {
-			    var hls = new Hls();
-			    hls.loadSource(videoSrc);
-			    hls.attachMedia(video);
-			    hls.on(Hls.Events.MANIFEST_PARSED, function() {
-					video.play();
-					});
-			 }} ;
+			  play(videoSrc);
+			} ;
 		function playPause03(){ 
-			var video = document.getElementById('fall03');
+			// var video = document.getElementById('fall03');
 		  	var videoSrc = 'images/videos/fall03.m3u8';
-			if (Hls.isSupported()) {
-			    var hls = new Hls();
-			    hls.loadSource(videoSrc);
-			    hls.attachMedia(video);
-			    hls.on(Hls.Events.MANIFEST_PARSED, function() {
-					video.play();
-					});
-			 }} ;
+			play(videoSrc);
+			} ;
 		 function playPause04(){ 
-			var video = document.getElementById('fall04');
+			// var video = document.getElementById('fall04');
 		  	var videoSrc = 'images/videos/fall04.m3u8';
-			if (Hls.isSupported()) {
-			    var hls = new Hls();
-			    hls.loadSource(videoSrc);
-			    hls.attachMedia(video);
-			    hls.on(Hls.Events.MANIFEST_PARSED, function() {
-					video.play();
-					});
-			 }} ; 
+			 play(videoSrc);
+			} ;
 		function playPause05(){ 
-			var video = document.getElementById('fire05');
+			// var video = document.getElementById('fire05');
 		  	var videoSrc = 'images/videos/fire05.m3u8';
-			if (Hls.isSupported()) {
-			    var hls = new Hls();
-			    hls.loadSource(videoSrc);
-			    hls.attachMedia(video);
-			    hls.on(Hls.Events.MANIFEST_PARSED, function() {
-					video.play();
-					});
-			 }} ; 	
+			play(videoSrc);
+			} ; 	
 		function playPause06(){ 
-			var video = document.getElementById('fire06');
+			// var video = document.getElementById('fire06');
 		  	var videoSrc = 'images/videos/fire06.m3u8';
-			if (Hls.isSupported()) {
-			    var hls = new Hls();
-			    hls.loadSource(videoSrc);
-			    hls.attachMedia(video);
-			    hls.on(Hls.Events.MANIFEST_PARSED, function() {
-					video.play();
-					});
-			 }} ;
+			play(videoSrc);
+			} ;
 		function playPause07(){ 
-			var video = document.getElementById('mask07');
+			// var video = document.getElementById('mask07');
 		  	var videoSrc = 'images/videos/mask07.m3u8';
-			if (Hls.isSupported()) {
-			    var hls = new Hls();
-			    hls.loadSource(videoSrc);
-			    hls.attachMedia(video);
-			    hls.on(Hls.Events.MANIFEST_PARSED, function() {
-					video.play();
-					});
-			 }} ;
+			play(videoSrc);
+			} ;
 		function playPause08(){ 
-			var video = document.getElementById('person08');
+			// var video = document.getElementById('person08');
 		  	var videoSrc = 'images/videos/person08.m3u8';
-			if (Hls.isSupported()) {
-			    var hls = new Hls();
-			    hls.loadSource(videoSrc);
-			    hls.attachMedia(video);
-			    hls.on(Hls.Events.MANIFEST_PARSED, function() {
-					video.play();
-					});
-			 }} ;
+			play(videoSrc);
+			} ;
 		function playPause09(){ 
-			var video = document.getElementById('smoke09');
+			// var video = document.getElementById('smoke09');
 		  	var videoSrc = 'images/videos/smoke09.m3u8';
-			if (Hls.isSupported()) {
-			    var hls = new Hls();
-			    hls.loadSource(videoSrc);
-			    hls.attachMedia(video);
-			    hls.on(Hls.Events.MANIFEST_PARSED, function() {
-					video.play();
-					});
-			 }} ;
+			play(videoSrc);
+			} ;
 		  function playPause10(){ 
-			var video = document.getElementById('smoke10');
+			// var video = document.getElementById('smoke10');
 		  	var videoSrc = 'images/videos/smoke10.m3u8';
-			if (Hls.isSupported()) {
-			    var hls = new Hls();
-			    hls.loadSource(videoSrc);
-			    hls.attachMedia(video);
-			    hls.on(Hls.Events.MANIFEST_PARSED, function() {
-					video.play();
-					});
-			 }} ;
+			  play(videoSrc);
+			} ;
 		  
 		</script>
 
