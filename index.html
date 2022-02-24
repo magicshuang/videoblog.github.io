@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<!-- saved from url=(0067)https://www.51qianduan.com/uploadfile/temp/1903/31/16593/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Colored video player a Flat Responsive Widget Template :: w3layouts</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="keywords" content="Colored video player template Responsive, Login form web template,Flat Pricing tables,Flat Drop downs  Sign up Web Templates, Flat Web Templates, Login sign up Responsive web template, SmartPhone Compatible web template, free Web designs for Nokia, Samsung, LG, SonyEricsson, Motorola web design">
+<script type="application/x-javascript"> 
+	addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+	function hideURLbar(){ window.scrollTo(0,1); } 
+ </script>
+<!-- Custom Theme files -->
+<link href="./style.css" rel="stylesheet" type="text/css" media="all"> 
+<!-- //Custom Theme files -->
+<!-- web font -->
+<link href="./css" rel="stylesheet" type="text/css"><!--web font-->
+<!-- //web font --> 
+<style>
+.button7 {
+    background-color: #4CAF50; /* 绿色 */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button5 {background-color: #555555;} /* 黑色 */
+</style>
+</head>
+<body>
+	<!-- agileits-main -->
+	<div class="agileits-main">
+		<h1 class="agileits-w3layouts">算法视频</h1>
+		<div class="wthree-row w3-agile"> 
+			<div id="videoContainer">
+				<div class="overlay">
+					<div class="button agileinfo" style="background: url(&quot;images/play-button.png&quot;) 0% 0% / 100% 100%;"></div>
+				</div>
+				<div id="video">
+					<!-- agileits-main <video id="vv"></video> -->
+					<video id="videov" src="video/safe01.mp4"></video>
+					
+					<p>加载中 ...</p>
+				</div>
+				<div id="controls">
+					<div class="playButton">
+						<div class="playPause"></div>
+					</div>
+					<div class="ProgressContainer">
+						<div class="timer intialTime">00:00</div>
+						<div class="progressBar">
+							<div class="progress"></div>
+						</div>
+						<div class="time" style="left: 240.906px;">00:04</div>
+						<div class="timer fullTime">NaN:NaN</div>
+					</div>
+					
+					<div class="scale">
+						<div class="icon"></div>
+					</div>
+				</div>
+			</div>
+			<div>
+									<button id="src1" class="button7 button5"> 工地 </button> 
+								    <button id="src2" class="button7 button5"> 工地 </button>
+									<button id="src3" class="button7 button5"> 跌倒 </button>
+									<button id="src4" class="button7 button5"> 跌倒 </button>
+									<button id="src5" class="button7 button5"> 火焰 </button>
+									<button id="src6" class="button7 button5"> 火焰 </button>
+									<button id="src7" class="button7 button5"> 口罩 </button>
+									<button id="src8" class="button7 button5"> 人体 </button>
+									<button id="src9" class="button7 button5"> 吸烟 </button>
+									<button id="src10" class="button7 button5"> 吸烟 </button>
+			</div>
+			<script src="./jquery-3.1.0.min.js"></script>
+			<script>
+			$(document).ready(function () {
+
+				'use strict';
+
+				var play_pause     = $('.playButton'),
+					container      = $('#videoContainer'),
+					playIcon       = $('.playButton .playPause'),
+					video          = $('video'),
+					play           = $('.play'),
+					play_1         = $('#src1'),
+					play_2         = $('#src2'),
+					play_3         = $('#src3'),
+					play_4         = $('#src4'),
+					play_5         = $('#src5'),
+					play_6         = $('#src6'),
+					play_7         = $('#src7'),
+					play_8         = $('#src8'),
+					play_9         = $('#src9'),
+					play_10        = $('#src10'),
+			
+					volume         = $('.volume .icon'),
+					volumeIntesity = $('.volume .intensityBar'),
+					intensity      = $('.intensity'),
+					progressBar    = $('.progressBar'),
+					progress       = $('.progressBar .progress'),
+					timer          = $('.intialTime'),
+					vidDuration    = $('.fullTime'),
+					expandButton   = $('.scale .icon'),
+					overlayScreen  = $('.overlay'),
+					timeState      = $('.time'),
+					overlayButton  = $('.overlay .button'),
+					update;
+				
+				var videos=["video/safe01.mp4",
+							"video/safe02.mp4",
+							"video/fall03.mp4",
+							"video/fall04.mp4",
+							"video/fire05.mp4",
+							"video/fire06.mp4",
+							"video/mask07.mp4",
+							"video/person08.mp4",
+							"video/smoke09.mp4",
+							"video/smoke10.mp4",
+							
+							];
+
+				$(window).resize(function () { resizeVid(); });
+
+				// resizeVid();
+
+				// updateplayer();
+
+				play_pause.add(video).click(function () { playVid(); });
+
+				progressBar.click(function () {skip(); });
+
+				progressBar.mousemove(function () { timeState.text(getTimeState()); });
+
+				volume.click(function () { toggleMute(); });
+
+				volumeIntesity.click(function () { changeVolume(); });
+
+				expandButton.click(function () { fullScreen(); });
+
+				overlayButton.click(function () { playVid();});
+			  
+				vidDuration.text(getFormatedFullTime());
+                var videov = document.getElementById('videov');
+				
+				play_1.click(function () { videov.src=videos[0]; playVid();});
+				play_2.click(function () { videov.src=videos[1]; playVid();});
+				play_3.click(function () { videov.src=videos[2]; playVid();});
+				play_4.click(function () { videov.src=videos[3]; playVid();});
+				play_5.click(function () { videov.src=videos[4]; playVid();});
+				play_6.click(function () { videov.src=videos[5]; playVid();});
+				play_7.click(function () { videov.src=videos[6]; playVid();});
+				play_8.click(function () { videov.src=videos[7]; playVid();});
+				play_9.click(function () { videov.src=videos[8]; playVid();});
+				play_10.click(function () { videov.src=videos[9]; playVid();});
+
+				function playVid() {
+					if (video.get(0).paused) {
+						video.get(0).play();
+						playIcon.css({
+						   'background': 'url(images/pause.png)',
+						   'background-size': '100% 100%'
+						});
+						overlayScreen.hide();
+						update = setInterval(updateplayer, 1);
+
+					} else {
+						video.get(0).pause();
+						playIcon.css({
+						   'background': 'url(images/play.png)',
+						   'background-size': '100% 100%'
+						});
+						overlayScreen.show();
+						clearInterval(update);
+					}
+				}
+			  
+				function updateplayer() {
+					var percentage = (video[0].currentTime / video[0].duration) * 100;
+					progress.css({'width': percentage + '%'});
+					timer.text(getFormatedTime());
+					vidDuration.text(getFormatedFullTime());
+
+					if (video[0].ended) {
+						playIcon.css({
+						   'background': 'url(images/play.png)',
+						   'background-size': '100% 100%'
+						});
+						overlayScreen.show();
+						overlayButton.css({
+						   'background': 'url(images/replay.png)',
+						   'background-size': '100% 100%'
+						});
+					} else if (video[0].paused) {
+						overlayButton.css({
+						   'background': 'url(images/play-button.png)',
+						   'background-size': '100% 100%'
+						});
+					}
+				}
+
+				function getTimeState() {
+
+				  var mouseX = event.pageX - progressBar.offset().left,
+					  width  = progressBar.outerWidth();
+
+				   var currentSeconeds = Math.round((mouseX / width) * video[0].duration);
+				   var currentMinutes  = Math.floor(currentSeconeds/60);
+
+				   if (currentMinutes > 0) {
+					  currentSeconeds -= currentMinutes * 60;
+				   }
+				   if (currentSeconeds.toString().length === 1) {
+					   currentSeconeds = "0" + currentSeconeds;
+					}
+					if (currentMinutes.toString().length === 1) {
+						currentMinutes = "0" + currentMinutes;
+					}
+
+					timeState.css('left', (mouseX / width) * progressBar.width() + 18 + 'px');
+
+					return currentMinutes + ':' + currentSeconeds;
+
+				}
+
+				function skip() {
+					var mouseX = event.pageX - progressBar.offset().left,
+						width  = progressBar.outerWidth();
+				   video[0].currentTime = (mouseX / width) * video[0].duration;
+				   updateplayer();
+				}
+
+				function getFormatedFullTime() {
+
+					 var totalSeconeds = Math.round(video[0].duration);
+					 var totalMinutes  = Math.floor(totalSeconeds/60);
+					 if (totalMinutes > 0) {
+						totalSeconeds -= totalMinutes * 60;
+					 }
+					 if (totalSeconeds.toString().length === 1) {
+						 totalSeconeds = "0" + totalSeconeds;
+					  }
+					  if (totalMinutes.toString().length === 1) {
+						  totalMinutes = "0" + totalMinutes;
+					  }
+					return totalMinutes + ':' + totalSeconeds;
+				}
+
+				function getFormatedTime() {
+					 var seconeds = Math.round(video[0].currentTime);
+					 var minutes  = Math.floor(seconeds / 60);
+
+					  if (minutes > 0) {
+						seconeds -= minutes * 60;
+					 }
+					 if (seconeds.toString().length === 1) {
+						 seconeds = "0" + seconeds;
+					  }
+					  if (minutes.toString().length === 1) {
+						  minutes = "0" + minutes;
+					  }
+					 return minutes + ':' + seconeds;
+				 }
+
+				function toggleMute() {
+					if (!video[0].muted) {
+					   video[0].muted = true;
+					   volume.css({
+						  'background': 'url(images/mute.png)',
+						  'background-size': '100% 100%'
+					   });
+					   intensity.hide();
+					} else {
+					   video[0].muted = false;
+					   volume.css({
+						  'background': 'url(images/volume.png)',
+						  'background-size': '100% 100%'
+					   });
+					   intensity.show();
+					}
+				}
+
+				function changeVolume() {
+				   var mouseX = event.pageX - volumeIntesity.offset().left,
+					   width  = volumeIntesity.outerWidth();
+
+				   video[0].volume = (mouseX / width);
+				   intensity.css('width', (mouseX / width) * width + 'px');
+				   video[0].muted = false;
+				   volume.css({
+					  'background': 'url(images/volume.png)',
+					  'background-size': '100% 100%'
+				   });
+				   intensity.show();
+				}
+
+				function fullScreen() {
+					if (video[0].requestFullscreen) {
+					   video[0].requestFullscreen();
+					} else if (video[0].webkitRequestFullscreen) {
+					   video[0].webkitRequestFullscreen();
+					} else if (video[0].mozRequestFullscreen) {
+					   video[0].mozRequestFullscreen();
+					} else if (video[0].msRequestFullscreen) {
+					   video[0].msRequestFullscreen();
+					} else {
+					   video.dblclick(function () { fullScreen(); });
+					}
+
+				}
+
+				function resizeVid() {
+				   if (container.width() < 600) {
+					  container.addClass('small');
+				   } else {
+					  container.removeClass('small');
+				   }
+				}
+
+				$(window).keypress(function (e) {
+				   if (e.keyCode === 0 || e.keyCode === 32) {
+					  e.preventDefault()
+					  playVid();
+				   }
+				});
+			  
+				
+			});
+				
+
+		 
+			</script> 
+		</div>	
+	</div>	
+	<!-- //agileits-main -->
+	<!-- copyright -->
+	<div class="copy-agileits">
+		<p>© 2017 Colored video player . All rights reserved | Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a></p>
+	</div>
+	<!-- //copyright --> 
+
+</body></html>
