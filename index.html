@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!-- saved from url=(0067)https://www.51qianduan.com/uploadfile/temp/1903/31/16593/index.html -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>双l的站</title>
+<title>双的站</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <meta name="keywords" content="shuang">
@@ -66,8 +66,11 @@
 				</div>
 			</div>
 			<div>
+									<button id="src11" class="button7 button5"> 车料 </button>
+									<button id="src12" class="button7 button5"> 地面 </button>
+									<button id="src13" class="button7 button5"> 塔吊 </button>
 									<button id="src1" class="button7 button5"> 工地 </button> 
-								    <button id="src2" class="button7 button5"> 工地 </button>
+								        <button id="src2" class="button7 button5"> 工地 </button>
 									<button id="src3" class="button7 button5"> 跌倒 </button>
 									<button id="src4" class="button7 button5"> 跌倒 </button>
 									<button id="src5" class="button7 button5"> 火焰 </button>
@@ -98,6 +101,9 @@
 					play_8         = $('#src8'),
 					play_9         = $('#src9'),
 					play_10        = $('#src10'),
+					play_11        = $('#src11'),
+					play_12        = $('#src12'),
+					play_13        = $('#src13'),
 			
 					volume         = $('.volume .icon'),
 					volumeIntesity = $('.volume .intensityBar'),
@@ -122,6 +128,9 @@
 							"video/person08.mp4",
 							"video/smoke09.mp4",
 							"video/smoke10.mp4",
+					    		"video/truckmaterial.mp4",
+					    		"video/uavseg.mp4",
+					    		"video/hook.mp4",
 							
 							];
 
@@ -158,6 +167,9 @@
 				play_8.click(function () { videov.src=videos[7]; playVid();});
 				play_9.click(function () { videov.src=videos[8]; playVid();});
 				play_10.click(function () { videov.src=videos[9]; playVid();});
+				play_11.click(function () { videov.src=videos[10]; playVid();});
+				play_12.click(function () { videov.src=videos[11]; playVid();});
+				play_13.click(function () { videov.src=videos[12]; playVid();});
 
 				function playVid() {
 					if (video.get(0).paused) {
